@@ -2,6 +2,38 @@
 Changelog for package turtlebot_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.14 (2016-12-22)
+-------------------
+* update astra urdf by Turtlebot REP (`#248 <https://github.com/turtlebot/turtlebot/issues/248>`_)
+  * update astra urdf by Turtlebot REP
+  * update astra urdf
+  * Update astra.urdf.xacro
+* Update R200 URDF
+  The name of the camera link has been changed to
+  conform to the common standard.
+* Refactor urdf.xacro files to stop loading unnecessary content.
+  Currently, every robot configuration (e.g.,
+  turtlebot_description/robots/kobuki_hexagons_kinect.urdf.xacro)
+  simply includes a catch-all turtlebot_library.urdf.xacro file.
+  This file includes EVERY base, stacks, and sensor combination,
+  and thus a lot of unnecessary data is loaded into memory.
+  Refactored the turtlebot_library.urdf.xacro to include only
+  the data common to all turtlebot configurations, and modified
+  each robot configuration file to include only the additional base,
+  stacks, and sensor urdf files that apply.
+* Contributors: Kevin C. Wells, hcjung
+
+2.3.13 (2016-11-01)
+-------------------
+* Fix image format on Gazebo using B8G8R8
+  Related to https://github.com/ros-simulation/gazebo_ros_pkgs/issues/484
+* Add support for Intel R200 camera
+  Added necessary launch, urdf, etc. files to
+  add support for the R200 camera in Turtlebot.
+  Updated r200 URDF to inclue proper mounting.
+  Added runtime dependency on realsense_camera package.
+* Contributors: Kentaro Wada, Kevin C. Wells
+
 2.3.12 (2016-06-27)
 -------------------
 * update xacro usage for jade deprecations
