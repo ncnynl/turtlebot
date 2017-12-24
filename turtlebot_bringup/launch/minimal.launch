@@ -18,8 +18,9 @@
     <arg name="base" value="$(arg base)" />
     <arg name="serialport" value="$(arg serialport)" />
   </include>
+ <!--
   <include unless="$(eval arg('battery') == 'None')" file="$(find turtlebot_bringup)/launch/includes/netbook.launch.xml">
     <arg name="battery" value="$(arg battery)" />
-  </include>
+  </include> -->
 
 </launch>
